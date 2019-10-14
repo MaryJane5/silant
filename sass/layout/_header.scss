@@ -1,0 +1,220 @@
+.sticky-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    padding: 15px 0;
+    background-color: $blue;
+    @include media ('>=tablet') {
+        padding: 25px 0;
+    }
+    &.fixed-header {
+        position: fixed;
+    }
+    .container {
+        @include media ('>=tablet') {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+#nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 40px;
+    @include media ('>=desktop') {
+        flex-direction: row;
+        padding: 0;
+    }
+    li {
+        margin: 10px 0;
+        font-family: $base-font-serif;
+        font-weight: 700;
+        font-style: italic;
+        text-transform: none;
+        font-size: 22px;
+        @include media ('>=desktop') {
+            margin: 0 20px 0 0;
+        }
+        &:last-child {
+            margin: 0;
+        }
+        &:hover {
+            a {
+                opacity: 0.8;
+            }
+        }
+        a {
+            color: $white;
+        }
+    }
+}
+
+.main-slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    mark {
+        color: $white;
+        background-color: rgba(32, 84, 104, 0.8);
+        font-family: $base-font-serif;
+    }
+    h1 {
+        font-size: 30px;
+        @include media ('>=tablet') {
+            font-size: 35px;
+        }
+        @include media ('>=desktop') {
+            font-size: 55px;
+        }
+    }
+    p {
+        @include media ('>=tablet') {
+            margin: -20px 0 0;
+        }
+        mark {
+            color: #205468cc;
+            background: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            @include media ('>=tablet') {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// btn-scroll-down
+.icon-scroll,
+.icon-scroll:before {
+    position: absolute;
+    left: 50%;
+}
+
+.icon-scroll {
+    width: 35px;
+    height: 60px;
+    margin-left: -20px;
+    bottom: 10px;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 1px #225968;
+    border-radius: 25px;
+    background-color: $white;
+    cursor: pointer;
+    @include media ('>=tablet') {
+        width: 40px;
+        height: 70px;
+        bottom: 20px;
+    }
+}
+
+.icon-scroll:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #225968;
+    margin-left: -4px;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(46px);
+    }
+}
+
+// burger-menu
+.nav-opener {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    z-index: 9999;
+    @include media ('>=tablet') {
+        top: 15px;
+    }
+    @include media ('>=desktop') {
+        display: none;
+    }
+    &:before,
+    &:after,
+    span {
+        background: $white;
+        position: absolute;
+        top: 18px;
+        left: 0;
+        right: 0;
+        height: 5px;
+        transition: all .2s linear;
+    }
+    &:before,
+    &:after {
+        content: '';
+        top: 7px;
+    }
+    &:after {
+        top: 29px;
+    }
+    .nav-active & {
+        &:before,
+        &:after {
+            transform: rotate(45deg);
+            top: 50%;
+            left: 5px;
+            right: 5px;
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+        span {
+            opacity: 0;
+        }
+    }
+}
+
+.nav-active {
+    overflow: hidden;
+}
+
+.nav-drop {
+    @include animate(opacity visibility);
+    @include media ('<desktop') {
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        color: white;
+        background: linear-gradient(to bottom, #225968 0%, #1e5799 0%, #01afb0 88%);
+    }
+    .nav-active & {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.resize-active {
+    .nav-drop {
+        transition: none !important;
+    }
+}

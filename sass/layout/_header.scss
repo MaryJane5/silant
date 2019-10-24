@@ -63,7 +63,8 @@
     font-weight: 700;
     mark {
         color: $white;
-        background-color: rgba(32, 84, 104, 0.8);
+        background-color: rgba(15, 188, 186, 0.8);
+        ;
         font-family: $base-font-serif;
     }
     h1 {
@@ -80,7 +81,7 @@
             margin: -20px 0 0;
         }
         mark {
-            color: #205468cc;
+            color: $blue;
             background: #fff;
             font-size: 18px;
             font-weight: 700;

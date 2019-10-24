@@ -22,6 +22,42 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-forward1:before {
+    content: "\e90e";
+}
+
+.icon-forward:before {
+    content: "\e969";
+}
+
+.icon-hour-glass:before {
+    content: "\e979";
+}
+
+.icon-search:before {
+    content: "\e986";
+}
+
+.icon-key:before {
+    content: "\e98d";
+}
+
+.icon-hammer:before {
+    content: "\e996";
+}
+
+.icon-truck:before {
+    content: "\e9b0";
+}
+
+.icon-address-card-o:before {
+    content: "\e90d";
+}
+
+.icon-vcard-o:before {
+    content: "\e90d";
+}
+
 .icon-user:before {
     content: "\e90c";
 }
@@ -80,8 +116,4 @@
 
 .icon-wrench:before {
     content: "\e908";
-}
-
-.icon-search:before {
-    content: "\e986";
 }

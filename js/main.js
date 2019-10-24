@@ -157,3 +157,19 @@ $(window).scroll(function() {
     if (top < 200) $(".header-content").removeClass('fixed-header');
     else $(".sticky-header").addClass('fixed-header');
 });
+
+// open-close 
+jQuery(function() {
+    initOpenClose();
+});
+
+// open-close init
+function initOpenClose() {
+    jQuery('.open-close').openClose({
+        activeClass: 'active',
+        opener: '.opener',
+        slider: '.slide',
+        animSpeed: 400,
+        effect: 'slide'
+    });
+};
